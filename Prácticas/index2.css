@@ -1,0 +1,37 @@
+.highlight{
+    color:red;
+    text-decoration: line-through;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.linethrough{
+    text-decoration: line-through;
+}
+
+.overline{
+    text-decoration: overline;
+}
+
+.bold{
+    font-weight: 900;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.arial{
+    font-family: 'Franklin Gothic Medium', 'Arial'
+}
+
+.container{
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+    margin: 40px;
+    padding: 25px;
+}
