@@ -1,0 +1,28 @@
+Análisis Teórico:
+
+1. ¿Qué problema soluciona box-sizing: border-box?
+Soluciona el problema de que el ancho total de un elemento aumente al añadirle padding o border. 
+Con border-box, el tamaño definido incluye el relleno y el borde, facilitando el diseño preciso.
+
+2. Diferencia entre margin y padding.
+El padding es el espacio interno (entre el contenido y el borde), mientras que el margin es el 
+espacio externo (entre el borde del elemento y otros elementos circundantes).
+
+3. ¿Cuándo usar position: absolute vs relative?
+"relative" se usa para mover un elemento sin sacarlo del flujo normal o para servir de referencia. 
+"absolute" se usa para posicionar un elemento de forma exacta respecto a su ancestro posicionado más cercano.
+
+4. ¿Qué es la especificidad en CSS?
+Es el sistema que utiliza el navegador para determinar qué regla de estilo se aplica a un elemento 
+cuando hay conflictos (ej: un ID tiene más peso que una clase).
+
+5. Diferencia entre display: none y visibility: hidden.
+"display: none" elimina el elemento del flujo (no ocupa espacio), 
+mientras que "visibility: hidden" lo oculta pero mantiene el espacio vacío que ocupaba en la página.
+
+6. ¿Qué eje controla justify-content?
+Controla la alineación de los elementos a lo largo del eje principal (main axis), que por defecto es horizontal si la dirección es row.
+
+7. ¿Qué ventaja ofrece Flexbox frente a float?
+Flexbox permite una alineación y distribución de espacio mucho más sencilla y dinámica, 
+especialmente en el eje vertical, algo que con float requería trucos complejos como el "clearfix".
