@@ -1,0 +1,47 @@
+@use 'variables' as v; // Importamos las variables para usarlas aquí
+
+.btn {
+    display: inline-block;
+    padding: v.$padding-btn;
+    border-radius: v.$border-radius;
+    font-family: v.$font-main;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    // Efecto general al pasar el mouse
+    &:hover {
+        filter: brightness(1.1);
+        transform: translateY(-2px);
+    }
+
+    // Modificadores de color usando el ampersand (&)
+    &--primary {
+        background-color: v.$primary;
+        color: white;
+    }
+
+    &--success {
+        background-color: v.$success;
+        color: white;
+    }
+
+    &--danger {
+        background-color: v.$danger;
+        color: white;
+    }
+
+    &--outline {
+        background-color: transparent;
+        border: 2px solid v.$dark;
+        color: v.$dark;
+        
+        &:hover {
+            background-color: v.$dark;
+            color: white;
+        }
+    }
+}
