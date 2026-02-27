@@ -1,0 +1,26 @@
+@use 'variables' as v;
+
+.btn,
+button {
+  background: v.$primary-color;
+  color: v.$light-color;
+  padding: 0.5rem 0.9rem;
+  border-radius: v.$radius;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.95);
+}
+
+.btn:focus,
+button:focus {
+  outline: 3px solid rgba(30,58,138,0.12);
+  outline-offset: 2px;
+}
