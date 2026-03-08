@@ -4,17 +4,18 @@
 // Sección 9: Testimonios
 
 .testimonials {
-    padding: 80px 0;
+    padding: 80px 20px;
     background-color: #f2f5f8;
 
     &__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
-        align-items: start; /* texto sube en su columna */
+        align-items: start;
 
         @media (max-width: v.$breakpoint-lg) {
             grid-template-columns: 1fr;
+            gap: 50px;
         }
     }
 
@@ -22,11 +23,11 @@
         h2 {
             font-family: v.$font-secondary;
             font-weight: 700;
-            font-size: 48px;
+            font-size: v.$font-size-h2;
             line-height: 120%;
             letter-spacing: -1%;
             color: v.$text-dark;
-            margin-bottom: 20px;
+            margin: 0 0 20px 0;
         }
 
         p {
@@ -40,8 +41,7 @@
         }
     }
 
-    &__button{
-        
+    &__button {
         &-contact {
             padding: 12px 32px;
             font-family: v.$font-secondary;
@@ -53,27 +53,41 @@
             color: v.$blue;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-right: 15px; // Espacio horizontal entre botones
+            margin-right: 15px;
+            white-space: nowrap;
 
             &:hover {
                 background-color: v.$blue;
                 color: v.$white;
-                transform: translateY(-2px); // Efecto sutil de elevación
+                transform: translateY(-2px);
+            }
+
+            @media (max-width: v.$breakpoint-sm) {
+                margin-right: 0;
+                margin-bottom: 10px;
+                display: block;
+                width: 100%;
             }
         }
+
         &-see-all {
-            padding: 12px 0; // Eliminamos padding lateral para que se alinee con el texto
+            padding: 12px 0;
             font-family: v.$font-secondary;
             font-weight: 700;
             font-size: 16px;
-            
-            background-color: transparent; // Sin fondo
-            border: none;                  // Sin contorno
-            color: v.$text-dark;        // Solo color en las letras
-            
+            background-color: transparent;
+            border: none;
+            color: v.$text-dark;
             cursor: pointer;
             transition: color 0.3s ease;
             outline: none;
+            white-space: nowrap;
+
+            @media (max-width: v.$breakpoint-sm) {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
         }
     }
 
@@ -83,6 +97,36 @@
             height: auto;
             display: block;
             image-rendering: crisp-edges;
+        }
+    }
+}
+
+@media (max-width: v.$breakpoint-md) {
+    .testimonials {
+        padding: 60px 16px;
+
+        &__content {
+            h2 {
+                font-size: clamp(32px, 5.5vw, 48px);
+                margin: 0 0 15px 0;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &__button {
+            &-contact {
+                padding: 10px 24px;
+                font-size: 14px;
+                margin-right: 10px;
+            }
+
+            &-see-all {
+                font-size: 14px;
+            }
         }
     }
 }

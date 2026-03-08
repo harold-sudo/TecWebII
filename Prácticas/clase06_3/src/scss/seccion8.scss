@@ -3,7 +3,7 @@
 // Sección 8: Planes de Precios
 
 .pricing {
-    padding: 80px 0;
+    padding: 80px 20px;
 
     &__header {
         text-align: center;
@@ -11,7 +11,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 30px;
     }
 
     &__title-primary {
@@ -75,6 +74,7 @@
         img {
             height: 40px;
             cursor: pointer;
+            width: auto;
         }
     }
 
@@ -83,6 +83,54 @@
             width: 100%;
             height: auto;
             display: block;
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: v.$breakpoint-md) {
+    .pricing {
+        padding: 60px 16px;
+
+        &__header {
+            margin-bottom: 40px;
+        }
+
+        &__title-primary,
+        &__title-secondary {
+            font-size: clamp(36px, 5.5vw, 55px);
+        }
+
+        &__title-primary {
+            margin: 0 0 8px 0;
+        }
+
+        &__title-secondary {
+            margin: 0 0 15px 0;
+        }
+
+        &__description {
+            font-size: 16px;
+        }
+
+        &__badge {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        &__toggle {
+            gap: 15px;
+            margin-bottom: 20px;
+
+            p {
+                font-size: 14px;
+            }
+
+            img {
+                height: 35px;
+            }
         }
     }
 }

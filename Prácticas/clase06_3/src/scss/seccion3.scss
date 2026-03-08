@@ -3,16 +3,16 @@
 // Sección 3: Features Preview
 
 .features-preview {
-    padding: 10px 0 100px 0;
+    padding: 100px 0;
     text-align: center;
     position: relative;
     overflow: visible;
 
     &__bg-wrapper {
         position: absolute;
-        top: 350px;
-        left: -2%;
-        width: 40%;
+        top: 25%;
+        left: -12%;
+        width: 50%;
         height: auto;
         z-index: 0;
         pointer-events: none;
@@ -26,6 +26,7 @@
     .container {
         position: relative;
         z-index: 1;
+        margin-bottom: 15%;
     }
 
     &__header {
@@ -36,17 +37,15 @@
         align-items: center;
         text-align: center;
         gap: 50px;
-        // text-align: center;
-        // align-content: center;
 
         .section-title {
             font-family: v.$font-secondary;
             font-weight: 700;
-            font-size: 60px;
+            font-size: v.$font-size-h2;
             line-height: 120%;
             letter-spacing: -1%;
             color: v.$text-dark;
-            margin-top: 250px;
+            margin-top: 100px;
             margin-bottom: -40px;
         }
 
@@ -71,7 +70,13 @@
     margin: 0 auto;
 
     @media (max-width: v.$breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    @media (max-width: v.$breakpoint-md) {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -80,12 +85,31 @@
     text-align: center;
     max-width: 100%;
     margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
 
     &--white-text {
+        // background-color: v.$blue;
+        border-radius: 8px;
+        
         .feature-card__title,
         .feature-card__text {
             color: v.$white;
         }
+    }
+}
+
+.feature-card__icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+    img {
+        max-width: 80px;
+        height: auto;
     }
 }
 
@@ -96,6 +120,7 @@
     line-height: 120%;
     letter-spacing: -1%;
     color: v.$text-dark;
+    margin: 0 0 15px 0;
 }
 
 .feature-card__text {
@@ -107,4 +132,51 @@
     color: v.$text-gray;
     text-align: justify;
     text-align-last: center;
+    margin: 0;
+}
+
+@media (max-width: v.$breakpoint-md) {
+    .features-preview {
+        padding: 60px 0;
+
+        &__header {
+            gap: 30px;
+            margin: 0 auto 50px;
+
+            .section-title {
+                margin-top: 150px;
+                margin-bottom: -20px;
+                font-size: clamp(32px, 5.5vw, 48px);
+            }
+
+            .section-description {
+                font-size: 16px;
+                max-width: 85%;
+            }
+        }
+        &__bg-wrapper {
+            display: none;
+        }
+    }
+
+    .feature-card {
+        padding: 25px 15px;
+        margin-top: 15px;
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+        &--white-text {
+            .feature-card__title{
+                color: v.$text-dark;
+            }
+            .feature-card__text {
+                color: v.$text-gray;
+            }
+        }
+    }
 }

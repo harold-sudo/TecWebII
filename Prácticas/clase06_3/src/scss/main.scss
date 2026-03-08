@@ -17,6 +17,7 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 .container {
@@ -24,12 +25,44 @@ body, html {
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    // border: 8px solid black;
+
+    @media (max-width: v.$breakpoint-md) {
+        padding: 0 16px;
+    }
+
+    @media (max-width: v.$breakpoint-sm) {
+        padding: 0 12px;
+    }
 }
 
-/* utilidad para centrar secciones */
 .centered {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: v.$breakpoint-sm) {
+    body {
+        font-size: 14px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
 }

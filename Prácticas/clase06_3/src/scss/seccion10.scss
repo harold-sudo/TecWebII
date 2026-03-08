@@ -4,8 +4,8 @@
 // Sección 10: Preguntas Frecuentes
 
 .faq {
-    padding: 80px 0;
-    margin-bottom: 8%;
+    padding: 80px 20px;
+    margin-bottom: 80px;
 
     &__header {
         text-align: center;
@@ -14,11 +14,11 @@
         h2 {
             font-family: v.$font-secondary;
             font-weight: 700;
-            font-size: 48px;
+            font-size: v.$font-size-h2;
             line-height: 120%;
             letter-spacing: -1%;
             color: v.$text-dark;
-            margin-bottom: 20px;
+            margin: 0 0 20px 0;
         }
 
         p {
@@ -54,7 +54,7 @@
             line-height: 120%;
             letter-spacing: -1%;
             color: v.$text-dark;
-            margin-bottom: 15px;
+            margin: 0 0 15px 0;
         }
 
         p {
@@ -79,9 +79,51 @@
         color: v.$white;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        white-space: nowrap;
 
         &:hover {
-            background-color: color.adjust(v.$blue, $lightness: -10%);;
+            background-color: color.adjust(v.$blue, $lightness: -10%);
+        }
+    }
+}
+
+@media (max-width: v.$breakpoint-md) {
+    .faq {
+        padding: 60px 16px;
+        margin-bottom: 60px;
+
+        &__header {
+            margin-bottom: 40px;
+
+            h2 {
+                font-size: clamp(32px, 5.5vw, 48px);
+                margin: 0 0 15px 0;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        &__image {
+            margin-bottom: 40px;
+        }
+
+        &__footer {
+            h4 {
+                font-size: clamp(26px, 4vw, 32px);
+                margin: 0 0 12px 0;
+            }
+
+            p {
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+        }
+
+        &__button {
+            padding: 10px 24px;
+            font-size: 14px;
         }
     }
 }

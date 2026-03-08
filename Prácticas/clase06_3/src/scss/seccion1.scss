@@ -1,27 +1,37 @@
 @use "variables" as v;
 
-// Sección 1: Header y Navegación
-
 .header {
     padding: 20px 0;
     position: relative;
-    z-index: 10;
-    background-color: transparent; /* transparente para que se vea el fondo del hero */
+    z-index: 100;
+    background-color: transparent;
 
     &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        .logo {
-            img {
-                height: 50px;
-                width: auto;
-            }
-        }
     }
 }
 
+.hamburger-toggle { display: none; }
+
+.hamburger-label {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 110;
+
+    .hamburger-span {
+        width: 28px;
+        height: 3px;
+        background-color: v.$text-dark;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+}
+
+// 2. Navegación Desktop
 .nav {
     &__list {
         display: flex;
@@ -32,37 +42,60 @@
 
         a {
             font-family: v.$font-secondary;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 155%;
-            letter-spacing: 2%;
             text-decoration: none;
-            color: v.$white;
-            transition: opacity 0.3s ease;
+            color: v.$text-dark;
+            font-weight: 500;
+            transition: color 0.3s;
 
-            &:hover {
-                opacity: 0.8;
-            }
+            &:hover { color: v.$blue; }
         }
     }
 }
 
-// Responsive
-@media (max-width: 992px) {
-    .nav__list {
-        gap: 15px;
-    }
-}
+@media (max-width: v.$breakpoint-md) {
+    
+    .hamburger-label { display: flex; }
 
-@media (max-width: 768px) {
-    .header__content {
-        flex-direction: column;
-        gap: 20px;
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        
+        // Estado inicial: Oculto
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+
+        &__list {
+            flex-direction: column;
+            padding: 20px;
+            gap: 0;
+
+            li {
+                width: 100%;
+                border-bottom: 1px solid #eee;
+                
+                a {
+                    padding: 15px 0;
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
     }
 
-    .nav__list {
-        display: none;
+    // CUANDO EL CHECKBOX ESTÁ ACTIVO
+    #hamburger-toggle:checked ~ .nav {
+        max-height: 500px; // Permite que el menú se deslice hacia abajo
     }
 
-    /* el resto de responsive pertenece a la sección 2 */
+    // Animación de la X del icono
+    #hamburger-toggle:checked ~ .hamburger-label {
+        .hamburger-span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger-span:nth-child(2) { opacity: 0; }
+        .hamburger-span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
 }

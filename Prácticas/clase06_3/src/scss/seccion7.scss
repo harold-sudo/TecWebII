@@ -3,7 +3,7 @@
 // Sección 7: Capturas de Pantalla
 
 .screenshots {
-    padding: 80px 0;
+    padding: 80px 20px;
 
     &__header {
         text-align: center;
@@ -12,11 +12,11 @@
         h2 {
             font-family: v.$font-secondary;
             font-weight: 700;
-            font-size: 48px;
+            font-size: v.$font-size-h2;
             line-height: 120%;
             letter-spacing: -1%;
             color: v.$text-dark;
-            margin-bottom: 20px;
+            margin: 0 0 20px 0;
         }
 
         p {
@@ -35,11 +35,38 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        overflow: hidden;
+
         img {
-            width: 150%;
+            width: 100%;
+            max-width: 100%;
             height: auto;
-            flex-shrink: 0;
-            border-radius: 8px;   
+            display: block;
+            border-radius: 8px;
+
+            @media (max-width: v.$breakpoint-md) {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    }
+}
+
+@media (max-width: v.$breakpoint-md) {
+    .screenshots {
+        padding: 60px 16px;
+
+        &__header {
+            margin-bottom: 30px;
+
+            h2 {
+                font-size: clamp(32px, 5.5vw, 48px);
+                margin: 0 0 15px 0;
+            }
+
+            p {
+                font-size: 16px;
+            }
         }
     }
 }

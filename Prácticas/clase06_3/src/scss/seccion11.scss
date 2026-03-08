@@ -3,7 +3,7 @@
 // Sección 11: Descarga de Aplicación
 
 .app-download {
-    padding: 0 0 80px 0;
+    padding: 40px 20px 80px;
     background-color: v.$blue;
     color: v.$white;
     position: relative;
@@ -15,6 +15,11 @@
         gap: 60px;
         align-items: center;
         padding-top: 40px;
+
+        @media (max-width: v.$breakpoint-lg) {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
     }
 
     &__content {
@@ -25,7 +30,7 @@
             line-height: 120%;
             letter-spacing: -1%;
             color: v.$white;
-            margin-bottom: 20px;
+            margin: 0 0 20px 0;
         }
 
         p {
@@ -43,11 +48,16 @@
         img {
             max-width: 300px;
             height: auto;
+            width: 100%;
         }
     }
 
     &__image {
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
         img {
             width: 130%;
             height: auto;
@@ -55,6 +65,38 @@
             position: absolute;
             top: -300px;
             right: 0;
+
+            @media (max-width: v.$breakpoint-lg) {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 120%;
+                max-width: 400px;
+            }
+        }
+    }
+}
+
+@media (max-width: v.$breakpoint-md) {
+    .app-download {
+        padding: 30px 16px 60px;
+
+        &__content {
+            h2 {
+                font-size: clamp(32px, 5.5vw, 48px);
+                margin: 0 0 15px 0;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+
+        &__badges {
+            img {
+                max-width: 250px;
+            }
         }
     }
 }

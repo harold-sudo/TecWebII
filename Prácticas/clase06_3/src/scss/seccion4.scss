@@ -1,7 +1,5 @@
 @use "variables" as v;
 
-// Sección 4: Social Proof
-
 .social-proof {
     padding: 60px 0;
     text-align: center;
@@ -28,7 +26,28 @@
         img {
             height: 50px;
             object-fit: contain;
-            /* mantener imágenes nítidas sin efectos */
+            width: auto;
+            max-width: 120px;
+        }
+    }
+}
+
+@media (max-width: v.$breakpoint-md) {
+    .social-proof {
+        padding: 40px 0;
+
+        &__text {
+            font-size: 13px;
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+
+        &__logos {
+            gap: 30px;
+
+            img {
+                height: 40px;
+            }
         }
     }
 }

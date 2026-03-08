@@ -1,15 +1,12 @@
 @use "variables" as v;
 
-// Sección 2: Hero
-
 .hero {
     position: relative;
-    padding: 120px 0 60px 0; /* algo más de espacio para nav */
-    /* no background-color para que la imagen sea el único fondo */
+    padding: 120px 0 60px 0;
 
     &__background-wrapper {
         position: absolute;
-        top: -200px; /* sube más para cubrir el header */
+        top: -200px;
         right: -100px;
         left: 0;
         width: 100%;
@@ -22,19 +19,18 @@
             display: block;
             height: auto;
             &:nth-child(1) {
-                width: 70%; // Ajusta el tamaño según tu diseño
-                top: 5%;
-                left: 40%;
+                width: 60%;
+                height: 100%;
+                top: 10%;
+                left: 46%;
                 z-index: 1;
-                //opacity: 0.8; // Opcional, por si quieres transparencia
             }
 
-            // El Celular (encima de la burbuja)
             &:nth-child(2) {
-                width: 58%; // Ajusta el tamaño
-                bottom: -58%; // Baja más para que se vea mejor
-                right: -10%;
-                z-index: 2; // Mayor z-index para estar arriba
+                width: 58%;
+                bottom: -50%;
+                right: -12%;
+                z-index: 2;
             }
         }
     }
@@ -52,33 +48,36 @@
     &__text {
         flex: 1;
         text-align: left;
-        //text-align: justify;
+        min-width: 300px;
     }
 
     &__title {
         font-family: v.$font-secondary;
         font-weight: 700;
-        font-size: 60px; /* reducido de 64px */
+        font-size: v.$font-size-h1;
         line-height: 120%;
         letter-spacing: -1%;
         color: v.$text-dark;
         margin: 0 0 20px 0;
+        margin-top: 60px;
+        max-width: 60%;
     }
 
     &__description {
         font-family: v.$font-main;
         font-weight: 400;
-        font-size: 18px;
+        font-size: v.$font-size-body;
         line-height: 155%;
         letter-spacing: 2%;
         color: v.$text-dark;
         margin-bottom: 40px;
-        max-width: 65%;
+        max-width: 60%;
     }
 
     &__buttons {
         display: flex;
         gap: 20px;
+        flex-wrap: wrap;
 
         a {
             display: inline-block;
@@ -101,22 +100,21 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        min-width: 250px;
 
         img {
-            max-width: 80%; /* agrandado de 60% */
+            max-width: 70%;
             height: auto;
-            transform: scale(1.4); /* agrandado de 1.2 */
+            transform: scale(1.2);
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
         }
     }
 }
 
-// Responsive para hero
-@media (max-width: 992px) {
+@media (max-width: v.$breakpoint-lg) {
     .hero {
         &__background-wrapper {
-            width: 100%;
-            opacity: 0.8;
+            display: none;
         }
 
         &__grid {
@@ -124,9 +122,20 @@
             text-align: center;
         }
 
+        &__text {
+            text-align: center;
+            min-width: 100%;
+        }
+
+        &__title {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         &__description {
             margin-left: auto;
             margin-right: auto;
+            max-width: 100%;
         }
 
         &__buttons {
@@ -135,16 +144,35 @@
 
         &__image {
             justify-content: center;
+            min-width: 100%;
         }
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: v.$breakpoint-md) {
     .hero {
-        padding: 50px 0;
+        padding: 80px 0 50px 0;
+
+        &__background-wrapper {
+            top: -150px;
+            height: calc(100% + 250px);
+
+            img {
+                &:nth-child(1) {
+                    width: 60%;
+                    left: 35%;
+                }
+
+                &:nth-child(2) {
+                    width: 70%;
+                    bottom: -70%;
+                    right: -20%;
+                }
+            }
+        }
 
         &__title {
-            font-size: 40px;
+            font-size: clamp(40px, 6.5vw, 60px);
         }
 
         &__description {
@@ -153,7 +181,38 @@
 
         &__image {
             img {
-                /* mantenga estilos existentes dentro del bloque */
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+@media (max-width: v.$breakpoint-sm) {
+    .hero {
+        padding: 60px 0 40px 0;
+
+        &__background-wrapper {
+            top: -100px;
+            height: calc(100% + 200px);
+
+            img {
+                &:nth-child(1) {
+                    width: 80%;
+                    left: 20%;
+                }
+
+                &:nth-child(2) {
+                    width: 100%;
+                    bottom: -100%;
+                    right: -30%;
+                }
+            }
+        }
+
+        &__image {
+            img {
+                transform: scale(1);
+                max-width: 100%;
             }
         }
     }
