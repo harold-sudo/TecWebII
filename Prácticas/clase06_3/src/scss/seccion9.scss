@@ -1,14 +1,24 @@
 @use "variables" as v;
+@use "sass:color";
 
-// Sección 10: Preguntas Frecuentes
+// Sección 9: Testimonios
 
-.faq {
+.testimonials {
     padding: 80px 0;
+    background-color: #f2f5f8;
 
-    &__header {
-        text-align: center;
-        margin-bottom: 60px;
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start; /* texto sube en su columna */
 
+        @media (max-width: v.$breakpoint-lg) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__content {
         h2 {
             font-family: v.$font-secondary;
             font-weight: 700;
@@ -26,43 +36,7 @@
             line-height: 155%;
             letter-spacing: 2%;
             color: v.$text-gray;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    }
-
-    &__image {
-        margin-bottom: 60px;
-
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
-    }
-
-    &__footer {
-        text-align: center;
-
-        h4 {
-            font-family: v.$font-secondary;
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 120%;
-            letter-spacing: -1%;
-            color: v.$text-dark;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-family: v.$font-main;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 155%;
-            letter-spacing: 2%;
-            color: v.$text-gray;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
     }
 
@@ -77,9 +51,19 @@
         color: v.$white;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        margin-bottom: 20px;
 
         &:hover {
-            background-color: darken(v.$primary-blue, 10%);
+            background-color: color.adjust(v.$primary-blue, $lightness: -10%);
+        }
+    }
+
+    &__image {
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            image-rendering: crisp-edges;
         }
     }
 }
