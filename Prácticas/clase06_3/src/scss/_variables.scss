@@ -1,4 +1,42 @@
-$background-color: #ffffff;
-$primary-fonttext: 'Nunito', sans-serif;
-$secondary-fonttext: 'Rubik', sans-serif;
-$nav-height: 70px;
+// ==================== COLORES ====================
+$primary-blue: #007bff;
+$secondary-blue: #007aff;
+$dark-blue: #0e1133;
+$light-gray: #f8f9fa;
+$light-blue: #f2f5f8;
+$text-dark: #1a1a2e;
+$text-gray: #6c757d;
+$white: #ffffff;
+
+// ==================== TIPOGRAFÍA ====================
+$font-main: 'Rubik', sans-serif;
+$font-secondary: 'Nunito', sans-serif;
+
+// ==================== TAMAÑOS ====================
+$font-size-h1: 64px;
+$font-size-h2: 48px;
+$font-size-h3: 32px;
+$font-size-h4: 24px;
+$font-size-h5: 18px;
+$font-size-body: 16px;
+$font-size-small: 14px;
+
+// ==================== ESPACIADO ====================
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 20px;
+$spacing-lg: 30px;
+$spacing-xl: 50px;
+$spacing-2xl: 80px;
+
+// ==================== BREAKPOINTS ====================
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// ==================== LÍNEA ====================
+$line-height: 155%;
+$line-height-heading: 120%;
+$letter-spacing: 2%;
+$letter-spacing-heading: -1%;

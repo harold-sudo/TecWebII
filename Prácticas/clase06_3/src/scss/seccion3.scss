@@ -1,0 +1,32 @@
+@use "variables" as v;
+
+// Sección 4: Social Proof
+
+.social-proof {
+    padding: 60px 0;
+    text-align: center;
+
+    &__text {
+        font-family: v.$font-secondary;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
+        letter-spacing: -1%;
+        color: v.$text-dark;
+        margin-bottom: 50px;
+    }
+
+    &__logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+
+        img {
+            height: 50px;
+            object-fit: contain;
+            /* mantener imágenes nítidas sin efectos */
+        }
+    }
+}

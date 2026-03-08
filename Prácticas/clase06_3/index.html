@@ -1,36 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Responsivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Rubik:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/dist/css/main.css">
+    <title>Diseño Responsivo</title>
 </head>
 <body>
-    <div class="page1">
-        <div id="nav_bar">
+    <!-- Sección 1: Header y Navegación -->
+    <header class="header">
+        <div class="container header__content">
             <div class="logo">
-                <img src="/img/Nav_content.png" alt="nav_content">
+                <img src="/img/Nav_content.png" alt="Air Logo">
             </div>
-            <a href="">Feature</a>
-            <a href="">Screen</a>
-            <a href="">Priching</a>
-            <a href="">Testimonial</a>
-            <a href="">Contact</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#">Feature</a></li>
+                    <li><a href="#">Screen</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div id="content">
-            <div class="box1">
-                <h1>Apps compatible with Air Description of features</h1>
-                <p>
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-                    Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                </p>
-                <img src="/img/Mobile google play badge.png" alt="google_play_logo">
-                <img src="/img/Mobile app store badge.png" alt="play_store_logo">
+    </header>
+
+    <main>
+        <!-- Sección 2: Hero -->
+        <section class="hero">
+            <div class="hero__background-wrapper">
+                <img src="/img/Burbuja.png" alt="burbuja_azul">
             </div>
-            <img src="/img/Mano_con_cel.png" alt="mano_con_cel">
-        </div>
-        
-    </div>
+            <div class="container hero__grid">
+                <div class="hero__text">
+                    <h1 class="hero__title">Apps compatible with Air Description of features</h1>
+                    <p class="hero__description">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                        Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#"><img src="/img/Mobile google play badge.png" alt="Google Play"></a>
+                        <a href="#"><img src="/img/Mobile app store badge.png" alt="App Store"></a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="/img/Mano_con_cel.png" alt="Phone in hand">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Features Preview -->
+        <section class="features-preview">
+            <div class="features-preview__bg-wrapper">
+                <img src="/img/Burbuja2.png" alt="burbuja azul decorativa">
+            </div>
+            <div class="container">
+                <header class="features-preview__header">
+                    <h2 class="section-title">Check out our premium features</h2>
+                    <p class="section-description">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                        Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    </p>
+                </header>
+                <div class="features-grid">
+                    <div class="feature-card feature-card--white-text">
+                        <div class="feature-card__icon">
+                            <img src="/img/Ifeature1.png" alt="Icono de Easy Features">
+                        </div>
+                        <h3 class="feature-card__title">Easy Features</h3>
+                        <p class="feature-card__text">
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <img src="/img/Ifeature2.png" alt="Icono de Good User Experience">
+                        </div>
+                        <h3 class="feature-card__title">Good User Experience</h3>
+                        <p class="feature-card__text">
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <img src="/img/Ifeature3.png" alt="Icono de Clean Design">
+                        </div>
+                        <h3 class="feature-card__title">Clean Design</h3>
+                        <p class="feature-card__text">
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Social Proof -->
+        <section class="social-proof">
+            <div class="container">
+                <p class="social-proof__text">Join 4,000+ companies already growing</p>
+                <div class="social-proof__logos">
+                    <img src="/img/social_proof1.png" alt="Logo empresa 1">
+                    <img src="/img/social_proof2.png" alt="Logo empresa 2">
+                    <img src="/img/social_proof3.png" alt="Logo empresa 3">
+                    <img src="/img/social_proof4.png" alt="Logo empresa 4">
+                    <img src="/img/social_proof5.png" alt="Logo empresa 5">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Necesidades de Clientes -->
+        <section class="customer-needs">
+            <div class="container customer-needs__grid">
+                <div class="customer-needs__content">
+                    <h2 class="customer-needs__title">Customers' Needs for Enterprises</h2>
+                    <p class="customer-needs__description">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+                        Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt 
+                        ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                    </p>
+                    <div class="customer-needs__items">
+                        <div class="customer-needs__item">
+                            <img src="/img/Icustomer_need1.png" alt="Icono protocolos estándares">
+                            <h3>Industry Standard Protocols</h3>
+                            <p>
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                                Velit officia consequat duis enim velit mollit.
+                            </p>
+                        </div>
+                        <div class="customer-needs__item">
+                            <img src="/img/Icustomer_need2.png" alt="Icono on-premise en cloud">
+                            <h3>On-Premise, In Cloud</h3>
+                            <p>Compliance with leading organizations including SOC2, GDPR, OpenID Connect, and others.</p>
+                        </div>
+                        <div class="customer-needs__item">
+                            <img src="/img/Icustomer_need3.png" alt="Icono cumplimiento normativo">
+                            <h3>Compliance and Certifications</h3>
+                            <p>Compliance with leading organizations including SOC2, GDPR, OpenID Connect, and others.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="customer-needs__image">
+                    <img src="/img/imagen_adorno.png" alt="Celular con mano">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 6: Estadísticas de Descargas -->
+        <section class="statistics">
+            <div class="statistics__background">
+                <img src="/img/bg_extra2.png" alt="Fondo de estadísticas">
+            </div>
+            <div class="container statistics__grid">
+                <div class="statistics__item">
+                    <h4 class="statistics__label">Start Client</h4>
+                    <h2 class="statistics__value">21K</h2>
+                </div>
+                <div class="statistics__item">
+                    <h4 class="statistics__label">Apps Download</h4>
+                    <h2 class="statistics__value">100K</h2>
+                </div>
+                <div class="statistics__item">
+                    <h4 class="statistics__label">Certified Apps</h4>
+                    <h2 class="statistics__value">100</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 7: Capturas de Pantalla -->
+        <section class="screenshots">
+            <div class="container">
+                <header class="screenshots__header">
+                    <h2>Screenshots of the application</h2>
+                    <p>
+                        Not only does this app do everything you need, but it is also 
+                        beautifully designed and extremely intuitive to use.
+                    </p>
+                </header>
+                <div class="screenshots__image">
+                    <img src="/img/sc_images.png" alt="Capturas de pantalla de la aplicación">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 8: Planes de Precios -->
+        <section class="pricing">
+            <div class="container">
+                <header class="pricing__header">
+                    <h2 class="pricing__title-primary">Get awesome for your daily needs</h2>
+                    <h2 class="pricing__title-secondary">Pricing Plan, Our Features</h2>
+                    <p class="pricing__description">
+                        With bolts, you can increase customer adoption, meet compliance requirements, 
+                        secure APIs, and future-proof your enterprise.
+                    </p>
+                    <div class="pricing__badge">
+                        <img src="/img/descuento.png" alt="Insignia de descuento">
+                    </div>
+                    <div class="pricing__toggle">
+                        <p>Pay Monthly</p>
+                        <img src="/img/selector.png" alt="Selector de período de pago">
+                        <p>Pay Yearly</p>
+                    </div>
+                </header>
+                <div class="pricing__image">
+                    <img src="/img/planes.png" alt="Planes de precios">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 9: Testimonios -->
+        <section class="testimonials">
+            <div class="container testimonials__grid">
+                <div class="testimonials__content">
+                    <h2>Feedback from our customers</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Suspendisse varius enim in eros elementum tristique. 
+                        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, 
+                        ut commodo diam libero vitae erat.
+                    </p>
+                    <button class="testimonials__button">Contact Us</button>
+                    <img src="/img/see_all.png" alt="Ver todos los testimonios">
+                </div>
+                <div class="testimonials__image">
+                    <img src="/img/testimonios.png" alt="Testimonios de clientes">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 10: Preguntas Frecuentes -->
+        <section class="faq">
+            <div class="container">
+                <header class="faq__header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Suspendisse varius enim in eros elementum tristique.
+                    </p>
+                </header>
+                <div class="faq__image">
+                    <img src="/img/preguntas.png" alt="Preguntas frecuentes">
+                </div>
+                <footer class="faq__footer">
+                    <h4>Still have a question?</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <button class="faq__button">Contact Us</button>
+                </footer>
+            </div>
+        </section>
+
+        <!-- Sección 11: Descarga de Aplicación -->
+        <section class="app-download">
+            <div class="container app-download__grid">
+                <div class="app-download__content">
+                    <h2>Now available App Download Store</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Suspendisse varius enim in eros elementum tristique. Duis cursus, 
+                        mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+                    </p>
+                    <div class="app-download__badges">
+                        <img src="/img/available_download.png" alt="Tiendas de descarga disponibles">
+                    </div>
+                </div>
+                <div class="app-download__image">
+                    <img src="/img/propaganda.png" alt="Chica con celular">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 12: Footer -->
+        <footer class="footer">
+            <div class="container">
+                <section class="footer__promo">
+                    <h2>Start your 30 days free trial today!</h2>
+                    <button class="footer__button">Contact Us</button>
+                </section>
+                <section class="footer__content">
+                    <div class="footer__column">
+                        <h5>About Rareblocks</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. 
+                            Netus sodales in volutpat ullamcorper amet adipiscing fermentum.
+                        </p>
+                        <img src="/img/social_logos.png" alt="Logos de redes sociales">
+                    </div>
+                    <div class="footer__column">
+                        <h5>Company</h5>
+                        <ul class="footer__list">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Works</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h5>Help</h5>
+                        <ul class="footer__list">
+                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="#">Delivery Details</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h5>Resources</h5>
+                        <ul class="footer__list">
+                            <li><a href="#">Free eBooks</a></li>
+                            <li><a href="#">Development Tutorial</a></li>
+                            <li><a href="#">How to - Blog</a></li>
+                            <li><a href="#">Youtube Playlist</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </footer>
+    </main>
+
 </body>
 </html>

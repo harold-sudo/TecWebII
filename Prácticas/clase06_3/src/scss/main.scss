@@ -1,2 +1,34 @@
 @use "variables" as v;
-@use "layout" as l;
+@use "seccion1";
+@use "seccion2";
+@use "seccion3";
+@use "seccion4";
+@use "seccion5";
+@use "seccion6";
+@use "seccion7";
+@use "seccion8";
+@use "seccion9";
+@use "seccion10";
+@use "seccion11";
+@use "seccion12";
+
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* utilidad para centrar secciones */
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

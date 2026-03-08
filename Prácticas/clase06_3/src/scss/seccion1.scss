@@ -1,0 +1,205 @@
+@use "variables" as v;
+
+// Sección 1: Header y Navegación
+
+.header {
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+    background-color: transparent; /* transparente para que se vea el fondo del hero */
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            img {
+                height: 50px;
+                width: auto;
+            }
+        }
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+
+        a {
+            font-family: v.$font-secondary;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 155%;
+            letter-spacing: 2%;
+            text-decoration: none;
+            color: v.$white;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+// Sección 2: Hero
+
+.hero {
+    position: relative;
+    padding: 120px 0 60px 0; /* algo más de espacio para nav */
+    /* no background-color para que la imagen sea el único fondo */
+
+    &__background-wrapper {
+        position: absolute;
+        top: -200px; /* sube más para cubrir el header */
+        right: 0;
+        width: 100%;
+        height: calc(100% + 200px);
+        z-index: 0;
+        pointer-events: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right top;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__text {
+        flex: 1;
+        text-align: center;
+        text-align: justify;
+    }
+
+    &__title {
+        font-family: v.$font-secondary;
+        font-weight: 700;
+        font-size: 48px; /* reducido de 64px */
+        line-height: 120%;
+        letter-spacing: -1%;
+        color: v.$text-dark;
+        margin: 0 0 20px 0;
+    }
+
+    &__description {
+        font-family: v.$font-main;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 155%;
+        letter-spacing: 2%;
+        color: v.$text-gray;
+        margin-bottom: 40px;
+        max-width: 500px;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 20px;
+
+        a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            img {
+                height: 45px;
+                width: auto;
+                display: block;
+            }
+        }
+    }
+
+    &__image {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        img {
+            max-width: 80%; /* agrandado de 60% */
+            height: auto;
+            transform: scale(1.4); /* agrandado de 1.2 */
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 992px) {
+    .hero {
+        &__background-wrapper {
+            width: 100%;
+            opacity: 0.8;
+        }
+
+        &__grid {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        &__description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__buttons {
+            justify-content: center;
+        }
+
+        &__image {
+            justify-content: center;
+        }
+    }
+
+    .nav__list {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav__list {
+        display: none;
+    }
+
+    .hero {
+        padding: 50px 0;
+
+        &__title {
+            font-size: 40px;
+        }
+
+        &__description {
+            font-size: 16px;
+        }
+
+        &__image {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
