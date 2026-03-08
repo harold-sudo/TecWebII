@@ -3,15 +3,18 @@
 // Sección 11: Descarga de Aplicación
 
 .app-download {
-    padding: 80px 0;
-    background-color: v.$primary-blue;
+    padding: 0 0 80px 0;
+    background-color: v.$blue;
     color: v.$white;
+    position: relative;
+    overflow: visible;
 
     &__grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
         align-items: center;
+        padding-top: 40px;
     }
 
     &__content {
@@ -46,11 +49,12 @@
     &__image {
         position: relative;
         img {
-            width: 100%;
+            width: 130%;
             height: auto;
             display: block;
-            top: -40px; /* aumentado de -20px */
-            position: relative;
+            position: absolute;
+            top: -300px;
+            right: 0;
         }
     }
 }

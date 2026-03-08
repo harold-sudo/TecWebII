@@ -40,21 +40,40 @@
         }
     }
 
-    &__button {
-        padding: 12px 32px;
-        font-family: v.$font-secondary;
-        font-weight: 700;
-        font-size: 16px;
-        border: none;
-        border-radius: 4px;
-        background-color: v.$primary-blue;
-        color: v.$white;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin-bottom: 20px;
+    &__button{
+        
+        &-contact {
+            padding: 12px 32px;
+            font-family: v.$font-secondary;
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid v.$blue;
+            border-radius: 4px;
+            background-color: v.$white;
+            color: v.$blue;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 15px; // Espacio horizontal entre botones
 
-        &:hover {
-            background-color: color.adjust(v.$primary-blue, $lightness: -10%);
+            &:hover {
+                background-color: v.$blue;
+                color: v.$white;
+                transform: translateY(-2px); // Efecto sutil de elevación
+            }
+        }
+        &-see-all {
+            padding: 12px 0; // Eliminamos padding lateral para que se alinee con el texto
+            font-family: v.$font-secondary;
+            font-weight: 700;
+            font-size: 16px;
+            
+            background-color: transparent; // Sin fondo
+            border: none;                  // Sin contorno
+            color: v.$text-dark;        // Solo color en las letras
+            
+            cursor: pointer;
+            transition: color 0.3s ease;
+            outline: none;
         }
     }
 
