@@ -66,3 +66,25 @@ img {
         min-width: 44px;
     }
 }
+
+@media (min-width: v.$breakpoint-lg) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 1300px;
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: v.$breakpoint-xl) {
+    body {
+        font-size: 20px;
+    }
+
+    .container {
+        max-width: 1500px;
+        padding: 0 40px;
+    }
+}

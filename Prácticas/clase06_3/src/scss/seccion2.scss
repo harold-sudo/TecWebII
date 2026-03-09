@@ -19,17 +19,17 @@
             display: block;
             height: auto;
             &:nth-child(1) {
-                width: 60%;
+                width: 70%;
                 height: 100%;
                 top: 10%;
-                left: 46%;
+                right: -15%;
                 z-index: 1;
             }
 
             &:nth-child(2) {
-                width: 58%;
-                bottom: -50%;
-                right: -12%;
+                width: 62%;
+                bottom: 20%;
+                right: -5%;
                 z-index: 2;
             }
         }
@@ -213,6 +213,114 @@
             img {
                 transform: scale(1);
                 max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: v.$breakpoint-lg) {
+    .hero {
+        padding: 150px 0 80px 0;
+
+        &__background-wrapper {
+            max-width: 1200px;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+
+            img {
+                &:nth-child(1) {
+                    width: 65%;
+                    right: -20%;
+                    left: auto;
+                }
+
+                &:nth-child(2) {
+                    width: 60%;
+                    right: -8%;
+                    bottom: -18%;
+                }
+            }
+        }
+
+        &__grid {
+            gap: 50px;
+        }
+
+        &__title {
+            margin-bottom: 30px;
+        }
+
+        &__description {
+            margin-bottom: 50px;
+        }
+
+        &__buttons {
+            gap: 30px;
+
+            a img {
+                height: 55px;
+            }
+        }
+
+        &__image {
+            img {
+                max-width: 75%;
+            }
+        }
+    }
+}
+
+@media (min-width: v.$breakpoint-xl) {
+    .hero {
+        padding: 180px 0 100px 0;
+
+        &__background-wrapper {
+            max-width: 1400px;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+
+            img {
+                &:nth-child(1) {
+                    width: 80%;
+                    right: -26%;
+                    left: auto;
+                }
+
+                &:nth-child(2) {
+                    width: 70%;
+                    right: -28%;
+                    bottom: -48%;
+                }
+            }
+        }
+
+        &__grid {
+            gap: 70px;
+        }
+
+        &__title {
+            margin-bottom: 40px;
+            max-width: 60%;
+        }
+
+        &__description {
+            margin-bottom: 60px;
+            max-width: 70%;
+        }
+
+        &__buttons {
+            gap: 40px;
+
+            a img {
+                height: 65px;
+            }
+        }
+
+        &__image {
+            img {
+                max-width: 85%;
             }
         }
     }

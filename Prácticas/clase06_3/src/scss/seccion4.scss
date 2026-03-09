@@ -51,3 +51,45 @@
         }
     }
 }
+
+@media (min-width: v.$breakpoint-lg) {
+    .social-proof {
+        padding: 80px 0;
+
+        &__text {
+            font-size: 17px;
+            margin-top: 80px;
+            margin-bottom: 25px;
+        }
+
+        &__logos {
+            gap: 60px;
+
+            img {
+                height: 60px;
+                max-width: 140px;
+            }
+        }
+    }
+}
+
+@media (min-width: v.$breakpoint-xl) {
+    .social-proof {
+        padding: 80px 0;
+
+        &__text {
+            font-size: 18px;
+            margin-top: 80px;
+            margin-bottom: 30px;
+        }
+
+        &__logos {
+            gap: 70px;
+
+            img {
+                height: 70px;
+                max-width: 160px;
+            }
+        }
+    }
+}
