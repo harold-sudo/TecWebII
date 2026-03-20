@@ -14,19 +14,18 @@
             <div class="logo">
                 <img src="/img/Nav_content.png" alt="Air Logo">
             </div>
-            <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
-            <label for="hamburger-toggle" class="hamburger-label">
+            <button class="hamburger-label" type="button" aria-label="Abrir o cerrar menu" aria-controls="main-nav" aria-expanded="false">
                 <span class="hamburger-span"></span>
                 <span class="hamburger-span"></span>
                 <span class="hamburger-span"></span>
-            </label>
-            <nav class="nav">
+            </button>
+            <nav class="nav" id="main-nav">
                 <ul class="nav__list">
-                    <li><a href="#">Feature</a></li>
-                    <li><a href="#">Screen</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Testimonial</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#features-preview">Feature</a></li>
+                    <li><a href="#screenshots">Screen</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonial</a></li>
+                    <li><a href="#footer">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -55,7 +54,7 @@
         </section>
 
         <!-- Sección 3: Features Preview -->
-        <section class="features-preview">
+        <section class="features-preview" id="features-preview">
             <div class="features-preview__bg-wrapper">
                 <img src="/img/Burbuja2.png" alt="burbuja azul decorativa 2">
             </div>
@@ -180,7 +179,7 @@
         </section>
 
         <!-- Sección 7: Capturas de Pantalla -->
-        <section class="screenshots">
+        <section class="screenshots" id="screenshots">
             <div class="container">
                 <header class="screenshots__header">
                     <h2>Screenshots of the application</h2>
@@ -196,7 +195,7 @@
         </section>
 
         <!-- Sección 8: Planes de Precios -->
-        <section class="pricing">
+        <section class="pricing" id="pricing">
             <div class="container">
                 <header class="pricing__header">
                     <h2 class="pricing__title-primary">Get awesome for your daily needs</h2>
@@ -221,7 +220,7 @@
         </section>
 
         <!-- Sección 9: Testimonios -->
-        <section class="testimonials">
+        <section class="testimonials" id="testimonials">
             <div class="container testimonials__grid">
                 <div class="testimonials__content">
                     <h2>Feedback from our customers</h2>
@@ -283,7 +282,7 @@
     </main>
 
     <!-- Sección 12: Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <section class="footer__promo">
                 <h2>Start your 30 days free trial today!</h2>
@@ -329,5 +328,6 @@
             </section>
         </div>
     </footer>
+    <script src="/src/javascript/hamburger.js" defer></script>
 </body>
 </html>

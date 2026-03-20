@@ -13,14 +13,15 @@
     }
 }
 
-.hamburger-toggle { display: none; }
-
 .hamburger-label {
     display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
     z-index: 110;
+    border: none;
+    background: transparent;
+    padding: 0;
 
     .hamburger-span {
         width: 28px;
@@ -87,13 +88,12 @@
         }
     }
 
-    // CUANDO EL CHECKBOX ESTÁ ACTIVO
-    #hamburger-toggle:checked ~ .nav {
+    .nav.nav--open {
         max-height: 500px; // Permite que el menú se deslice hacia abajo
     }
 
     // Animación de la X del icono
-    #hamburger-toggle:checked ~ .hamburger-label {
+    .hamburger-label.hamburger-label--active {
         .hamburger-span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
         .hamburger-span:nth-child(2) { opacity: 0; }
         .hamburger-span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
