@@ -188,9 +188,24 @@
                         beautifully designed and extremely intuitive to use.
                     </p>
                 </header>
-                <div class="screenshots__image">
-                    <img src="/img/sc_images.png" alt="Capturas de pantalla de la aplicación">
+                <div class="carousel">
+                    <button class="carousel__control carousel__control--prev" aria-label="Previous slide">&lt;</button>
+                    <div class="track">
+                        <img src="/img/phone1.png" class="phone" alt="phone 1">
+                        <img src="/img/phone2.png" class="phone active" alt="phone 2">
+                        <img src="/img/phone3.png" class="phone" alt="phone 3">
+                    </div>
+                    <button class="carousel__control carousel__control--next" aria-label="Next slide">&gt;</button>
+
+                    <div class="dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
                 </div>
+                <!-- <div class="screenshots__image">
+                    <img src="/img/sc_images.png" alt="Capturas de pantalla de la aplicación">
+                </div> -->
             </div>
         </section>
 
@@ -329,5 +344,6 @@
         </div>
     </footer>
     <script src="/src/javascript/hamburger.js" defer></script>
+    <script src="/src/javascript/carousel.js" defer></script>
 </body>
 </html>

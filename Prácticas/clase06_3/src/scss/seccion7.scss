@@ -3,7 +3,18 @@
 // Sección 7: Capturas de Pantalla
 
 .screenshots {
-    padding: 80px 20px;
+    padding: 120px 20px;
+    background: #ffffff;
+    min-height: 60vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .carousel {
+        margin: 0 auto;
+    }
 
     &__header {
         text-align: center;
@@ -31,27 +42,169 @@
         }
     }
 
-    &__image {
-        display: flex;
-        justify-content: center;
+    /* =========================
+       CAROUSEL
+    ========================= */
+    .carousel {
         width: 100%;
-        overflow: hidden;
+        max-width: 900px;
+        position: relative;
+        background: transparent;
 
-        img {
-            width: 100%;
-            max-width: 100%;
+        /* 🔥 CLAVE: evitar corte */
+        overflow: visible;
+
+        /* 🔥 corregido */
+        padding: 32px 0;
+
+        /* =========================
+           CONTROLES
+        ========================= */
+        &__control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+
+            width: 56px;
+            height: 56px;
+
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.08);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+            color: #222;
+
+            box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+            transition: all .2s ease;
+        }
+
+        &__control--prev { left: -30px; }
+        &__control--next { right: -30px; }
+
+        &__control:hover,
+        &__control:focus {
+            background: #007bff;
+            color: #fff;
+            transform: translateY(-50%) scale(1.05);
+            outline: none;
+        }
+
+        /* =========================
+           TRACK
+        ========================= */
+        .track {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+
+            transition: transform 0.4s ease;
+            will-change: transform;
+
+            /* 🔥 MUY IMPORTANTE */
+            width: max-content;
+        }
+
+        /* =========================
+           PHONES
+        ========================= */
+        .phone {
+            flex: 0 0 auto;
+            width: 260px;
             height: auto;
-            display: block;
-            border-radius: 8px;
+            object-fit: contain;
 
-            @media (max-width: v.$breakpoint-md) {
-                width: 100%;
-                max-width: none;
+            display: block;
+            border-radius: 10px;
+
+            box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+
+            transform-origin: center;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+
+            /* estado base */
+            opacity: 0.4;
+            transform: scale(0.85);
+
+            margin: 0;
+        }
+
+        .phone.active {
+            opacity: 1;
+            transform: scale(1.1);
+            z-index: 2;
+        }
+
+        .phone.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .phone:not(.visible) {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* =========================
+           DOTS
+        ========================= */
+        .dots {
+            margin-top: 30px;
+            text-align: center;
+
+            .dot {
+                height: 10px;
+                width: 10px;
+                margin: 0 6px;
+                display: inline-block;
+                background: gray;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all .2s ease;
             }
+
+            .dot.active {
+                background: #007bff;
+                transform: scale(1.2);
+            }
+        }
+
+        /* =========================
+           FADE LATERAL (PRO)
+        ========================= */
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 80px;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        &::before {
+            left: 0;
+            background: linear-gradient(to right, #fff, transparent);
+        }
+
+        &::after {
+            right: 0;
+            background: linear-gradient(to left, #fff, transparent);
         }
     }
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: v.$breakpoint-md) {
     .screenshots {
         padding: 60px 16px;
@@ -67,6 +220,18 @@
             p {
                 font-size: 16px;
             }
+        }
+
+        .carousel {
+            padding: 20px 0;
+
+            &__control {
+                width: 40px;
+                height: 40px;
+            }
+
+            &__control--prev { left: 5px; }
+            &__control--next { right: 5px; }
         }
     }
 }
